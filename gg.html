@@ -136,19 +136,16 @@
 <footer>
   &copy; 2025 NetSecurePro IA — Tous droits réservés
 </footer>
-
 <script>
-  function generateResponse() {
-    const input = document.getElementById("userInput").value.toLowerCase();
-    let reply = "Merci pour votre question. IA22 LOGIC recommande une analyse contextuelle avant toute action.";
-
-    if (input.includes("cyberattaque")) {
-      reply = "En cas de cyberattaque, IA22 LOGIC préconise : isolement du système, analyse des vecteurs d’intrusion, et activation du protocole Zoubirou-SHIELD.";
-    } else if (input.includes("santé")) {
-      reply = "Pour les diagnostics sensibles, IA22 LOGIC utilise une approche probabiliste croisée avec les données locales pour éviter les biais.";
-    }
-
-    document.getElementById("response").innerText = reply;
+  async function generateResponse() {
+    const input = document.getElementById("userInput").value;
+    const res = await fetch("https://ton-api.net/ia22logic", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: input })
+    });
+    const data = await res.json();
+    document.getElementById("response").innerText = data.reply;
   }
 </script>
 
