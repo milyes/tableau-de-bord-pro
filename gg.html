@@ -1,13 +1,156 @@
-<h2>📷 Analyse d’image</h2>
-<form id="uploadForm">
-    <input type="file" id="imageFile" name="file" accept="image/*">
-    <button type="submit">Analyser</button>
-</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NetSecurePro IA — Présentation Officielle</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    header, footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #1f2937;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table th, table td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: left;
+    }
+    table th {
+      background-color: #e5e7eb;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e40af;
+    }
+    .testimonial {
+      background-color: #fff;
+      border-left: 4px solid #2563eb;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .demo-response {
+      background-color: #e0f2fe;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
 
-<div id="previewContainer" style="margin-top:20px;">
-    <img id="previewImage" style="max-width:300px; display:none;">
-    <p id="imageResult"></p>
-</div>
+<header>
+  <h1>NetSecurePro IA</h1>
+  <p>Écosystèmes Intégrés IA22 LOGIC — Par Mohammed Ilyes Zoubirou</p>
+</header>
+
+<!-- Sections précédentes ici (problématique, solution, etc.) -->
+
+<section>
+  <h2>💬 Témoignages</h2>
+  <div class="testimonial">
+    <strong>Dr. Amina B.</strong><br>
+    “NetSecurePro IA est une avancée majeure pour la souveraineté numérique en Afrique du Nord. Une IA qui comprend nos réalités.”
+  </div>
+  <div class="testimonial">
+    <strong>Karim L., ingénieur cybersécurité</strong><br>
+    “La logique IA22 est bluffante. Elle anticipe les menaces avant même qu’elles ne soient détectées par nos systèmes classiques.”
+  </div>
+</section>
+
+<section>
+  <h2>⚙️ Démo IA22 LOGIC</h2>
+  <p>Posez une question à notre moteur IA simulé :</p>
+  <input type="text" id="userInput" placeholder="Exemple : Quelle est la stratégie optimale en cas de cyberattaque ?">
+  <button onclick="generateResponse()">Envoyer</button>
+  <div id="response" class="demo-response"></div>
+</section>
+
+<section>
+  <h2>📨 Formulaire de contact</h2>
+  <form action="mailto:zoubirou.ia@protonmail.com" method="post" enctype="text/plain">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="Nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="Message" rows="5" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 NetSecurePro IA — Tous droits réservés
+</footer>
 
 <script>
-document.getElementById("
+  function generateResponse() {
+    const input = document.getElementById("userInput").value.toLowerCase();
+    let reply = "Merci pour votre question. IA22 LOGIC recommande une analyse contextuelle avant toute action.";
+
+    if (input.includes("cyberattaque")) {
+      reply = "En cas de cyberattaque, IA22 LOGIC préconise : isolement du système, analyse des vecteurs d’intrusion, et activation du protocole Zoubirou-SHIELD.";
+    } else if (input.includes("santé")) {
+      reply = "Pour les diagnostics sensibles, IA22 LOGIC utilise une approche probabiliste croisée avec les données locales pour éviter les biais.";
+    }
+
+    document.getElementById("response").innerText = reply;
+  }
+</script>
+
+</body>
+</html>
